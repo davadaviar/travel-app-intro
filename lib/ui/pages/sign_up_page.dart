@@ -1,4 +1,7 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_travel_bwa/ui/widgets/custom_button.dart';
 import '../../shared/theme.dart';
 
 class SignUpPage extends StatelessWidget {
@@ -118,33 +121,6 @@ class SignUpPage extends StatelessWidget {
 
       ;
 
-      Widget getStartedButton() {
-        return Container(
-          margin: EdgeInsets.only(top: 30),
-          width: double.infinity,
-          height: 55,
-          child: TextButton(
-            style: TextButton.styleFrom(
-                backgroundColor: kPrimaryColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(defaultRadius),
-                )),
-            onPressed: () {
-              Navigator.pushNamed(context, '/bonus');
-            },
-            child: Text(
-              'Register',
-              style: whiteTextStyle.copyWith(
-                fontSize: 18,
-                fontWeight: medium,
-              ),
-            ),
-          ),
-        );
-      }
-
-      ;
-
       return Container(
         margin: EdgeInsets.only(top: 30),
         padding: EdgeInsets.symmetric(
@@ -160,7 +136,14 @@ class SignUpPage extends StatelessWidget {
             nameInput(),
             emailInput(),
             passwordInput(),
-            getStartedButton(),
+            CustomButton(
+              title: 'Register',
+              width: 220,
+              margin: EdgeInsets.only(right: 20, left: 20),
+              onPressed: () {
+                Navigator.pushNamed(context, '/bonus');
+              },
+            ),
           ],
         ),
       );

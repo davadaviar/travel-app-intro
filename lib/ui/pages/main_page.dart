@@ -34,19 +34,16 @@ class MainPage extends StatelessWidget {
             children: [
               CustomBottomNavbarItem(
                 imgUrl: 'assets/icon_home.png',
-                iselected: true,
+                isSelected: true,
               ),
               CustomBottomNavbarItem(
                 imgUrl: 'assets/icon_booking.png',
-                iselected: false,
               ),
               CustomBottomNavbarItem(
                 imgUrl: 'assets/icon_card.png',
-                iselected: false,
               ),
               CustomBottomNavbarItem(
                 imgUrl: 'assets/icon_settings.png',
-                iselected: false,
               ),
             ],
           ),

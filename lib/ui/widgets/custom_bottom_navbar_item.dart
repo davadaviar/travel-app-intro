@@ -3,12 +3,10 @@ import '../../shared/theme.dart';
 
 class CustomBottomNavbarItem extends StatelessWidget {
   final String imgUrl;
-  final bool iselected;
+  final bool isSelected;
 
   const CustomBottomNavbarItem(
-      {Key? key,
-       required this.imgUrl,
-      this.iselected = false})
+      {Key? key, required this.imgUrl, this.isSelected = false})
       : super(key: key);
 
   @override
@@ -32,7 +30,7 @@ class CustomBottomNavbarItem extends StatelessWidget {
           width: 30,
           height: 4,
           decoration: BoxDecoration(
-            color: iselected ? kPrimaryColor : kTransparentColor,
+            color: isSelected ? kPrimaryColor : kTransparentColor,
             borderRadius: BorderRadius.circular(18),
           ),
         ),
