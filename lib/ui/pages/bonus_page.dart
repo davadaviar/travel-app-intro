@@ -40,7 +40,7 @@ class BonusPage extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Daviar Saputra',
+                        'Michaella Jane',
                         style: whiteTextStyle.copyWith(
                           fontSize: 24,
                           fontWeight: bold,
