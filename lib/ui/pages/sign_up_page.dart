@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_travel_bwa/ui/widgets/custom_button.dart';
 import '../../shared/theme.dart';
@@ -121,6 +119,17 @@ class SignUpPage extends StatelessWidget {
 
       ;
 
+      Widget registerButton() {
+        return CustomButton(
+          title: 'Register',
+          width: 320,
+          margin: EdgeInsets.only(top: 30),
+          onPressed: () {
+            Navigator.pushNamed(context, '/main');
+          },
+        );
+      }
+
       return Container(
         margin: EdgeInsets.only(top: 30),
         padding: EdgeInsets.symmetric(
@@ -136,14 +145,7 @@ class SignUpPage extends StatelessWidget {
             nameInput(),
             emailInput(),
             passwordInput(),
-            CustomButton(
-              title: 'Register',
-              width: 220,
-              margin: EdgeInsets.only(right: 20, left: 20),
-              onPressed: () {
-                Navigator.pushNamed(context, '/bonus');
-              },
-            ),
+            registerButton(),
           ],
         ),
       );
