@@ -106,6 +106,7 @@ class HomePage extends StatelessWidget {
           top: 30,
           left: defaultMargin,
           right: defaultMargin,
+          bottom: 120,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -117,10 +118,36 @@ class HomePage extends StatelessWidget {
                 fontWeight: bold,
               ),
             ),
-            CustomNewDestination(),
-            CustomNewDestination(),
-            CustomNewDestination(),
-            CustomNewDestination(),
+            CustomNewDestination(
+              placeName: 'Danau Beratan',
+              city: 'Singaraja',
+              imgUrl: 'assets/image_destination6.png',
+              rate: 5.0,
+            ),
+            CustomNewDestination(
+              placeName: 'Opera House',
+              city: 'Sydney',
+              imgUrl: 'assets/image_destination7.png',
+              rate: 4.9,
+            ),
+            CustomNewDestination(
+              placeName: 'Roma',
+              city: 'Roma',
+              imgUrl: 'assets/image_destination8.png',
+              rate: 4.8,
+            ),
+            CustomNewDestination(
+              placeName: 'Merlion Park',
+              city: 'Singapura',
+              imgUrl: 'assets/image_destination9.png',
+              rate: 4.8,
+            ),
+            CustomNewDestination(
+              placeName: 'French Riviera',
+              city: 'Monaco',
+              imgUrl: 'assets/image_destination10.png',
+              rate: 5.0,
+            ),
           ],
         ),
       );

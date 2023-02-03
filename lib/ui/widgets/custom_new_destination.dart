@@ -2,7 +2,18 @@ import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
 
 class CustomNewDestination extends StatelessWidget {
-  const CustomNewDestination({super.key});
+  final String placeName;
+  final String city;
+  final String imgUrl;
+  final double rate;
+
+  const CustomNewDestination(
+      {Key? key,
+      required this.placeName,
+      required this.city,
+      required this.imgUrl,
+      this.rate = 0})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +32,7 @@ class CustomNewDestination extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               image: DecorationImage(
-                image: AssetImage('assets/image_destination6.png'),
+                image: AssetImage(imgUrl),
               ),
             ),
           ),
@@ -33,7 +44,7 @@ class CustomNewDestination extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Danau Beratan',
+                  placeName,
                   style: blackTextStyle.copyWith(
                     fontSize: 16,
                     fontWeight: semiBold,
@@ -43,7 +54,7 @@ class CustomNewDestination extends StatelessWidget {
                   height: 5,
                 ),
                 Text(
-                  'Singaraja',
+                  city,
                   style: greyTextStyle.copyWith(
                     fontSize: 14,
                     fontWeight: light,
@@ -64,7 +75,7 @@ class CustomNewDestination extends StatelessWidget {
                 width: 10,
               ),
               Text(
-                '5.0',
+                rate.toString(),
                 style: blackTextStyle.copyWith(
                   fontSize: 16,
                   fontWeight: bold,
