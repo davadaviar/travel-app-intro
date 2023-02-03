@@ -28,24 +28,46 @@ class CustomNewDestination extends StatelessWidget {
           SizedBox(
             width: 15,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Danau Beratan',
-                style: blackTextStyle.copyWith(
-                  fontSize: 16,
-                  fontWeight: semiBold,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Danau Beratan',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: semiBold,
+                  ),
                 ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  'Singaraja',
+                  style: greyTextStyle.copyWith(
+                    fontSize: 14,
+                    fontWeight: light,
+                  ),
+                )
+              ],
+            ),
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                'assets/icon_star.png',
+                width: 20,
               ),
               SizedBox(
-                height: 5,
+                width: 10,
               ),
               Text(
-                'Singaraja',
-                style: greyTextStyle.copyWith(
-                  fontSize: 14,
-                  fontWeight: light,
+                '5.0',
+                style: blackTextStyle.copyWith(
+                  fontSize: 16,
+                  fontWeight: bold,
                 ),
               )
             ],
