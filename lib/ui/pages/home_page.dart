@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_travel_bwa/ui/widgets/custom_destination_card.dart';
+import 'package:flutter_travel_bwa/ui/widgets/custom_new_destination.dart';
 import '../../shared/theme.dart';
 
 class HomePage extends StatelessWidget {
@@ -97,10 +98,39 @@ class HomePage extends StatelessWidget {
       );
     }
 
+    ;
+
+    Widget newDestination() {
+      return Container(
+        margin: EdgeInsets.only(
+          top: 30,
+          left: defaultMargin,
+          right: defaultMargin,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'New This Year',
+              style: blackTextStyle.copyWith(
+                fontSize: 18,
+                fontWeight: bold,
+              ),
+            ),
+            CustomNewDestination(),
+            CustomNewDestination(),
+            CustomNewDestination(),
+            CustomNewDestination(),
+          ],
+        ),
+      );
+    }
+
     return ListView(
       children: [
         header(),
         popularDestination(),
+        newDestination(),
       ],
     );
   }
