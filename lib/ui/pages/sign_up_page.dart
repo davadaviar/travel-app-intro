@@ -56,7 +56,7 @@ class SignUpPage extends StatelessWidget {
           width: 320,
           margin: EdgeInsets.only(top: 50),
           onPressed: () {
-            Navigator.pushNamed(context, '/main');
+            Navigator.pushNamed(context, '/bonus');
           },
         );
       }
