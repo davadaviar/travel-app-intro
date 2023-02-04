@@ -8,40 +8,50 @@ class CustomBottomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-              icon: Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'IDR 30.000.000',
-                      style: blackTextStyle.copyWith(
-                        fontSize: 18,
-                        fontWeight: bold,
-                      ),
-                    ),
-                    Text(
-                      'Per Seat',
-                      style: greyTextStyle.copyWith(
-                        fontSize: 14,
-                        fontWeight: light,
-                      ),
-                    )
-                  ],
+      width: double.infinity,
+      margin: EdgeInsets.only(
+        top: 20,
+      ),
+      padding: EdgeInsets.symmetric(
+        vertical: 15,
+        horizontal: defaultMargin,
+      ),
+      decoration: BoxDecoration(
+        color: kWhiteColor,
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'IDR 30.000.000',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 18,
+                    fontWeight: bold,
+                  ),
                 ),
-              ),
-              label: ''),
-          BottomNavigationBarItem(
-              icon: CustomButton(
-                title: 'Book Now',
-                width: 160,
-                onPressed: () {
-                  Navigator.pushNamed(context, '/seat-page');
-                },
-              ),
-              label: ''),
+                Text(
+                  'Per Seat',
+                  style: greyTextStyle.copyWith(
+                    fontSize: 14,
+                    fontWeight: light,
+                  ),
+                )
+              ],
+            ),
+          ),
+          CustomButton(
+            title: 'Book Now',
+            width: 150,
+            margin: EdgeInsets.only(
+              top: 10,
+            ),
+            onPressed: () {
+              Navigator.pushNamed(context, '/seat-page');
+            },
+          ),
         ],
       ),
     );

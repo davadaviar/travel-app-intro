@@ -190,7 +190,7 @@ class DetailPage extends StatelessWidget {
 
                         // Note : Interest Detail
                         Container(
-                          margin: EdgeInsets.only(top: 20, bottom: 20),
+                          margin: EdgeInsets.only(top: 20, bottom: 50),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -246,10 +246,15 @@ class DetailPage extends StatelessWidget {
                 ],
               ),
             ),
+
+            // Note : Book Button
+            CustomBottomButton(),
           ],
         ),
       );
     }
+
+    ;
 
     return Scaffold(
       backgroundColor: kBackgroundColor,
@@ -261,7 +266,6 @@ class DetailPage extends StatelessWidget {
                 backgorundImage(),
                 customOverlay(),
                 detailContent(),
-                CustomBottomButton(),
               ],
             ),
           ],
