@@ -17,7 +17,7 @@ class CustomBottomButton extends StatelessWidget {
         horizontal: defaultMargin,
       ),
       decoration: BoxDecoration(
-        color: kWhiteColor,
+        color: kBackgroundColor,
       ),
       child: Row(
         children: [
