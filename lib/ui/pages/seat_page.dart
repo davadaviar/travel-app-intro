@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_travel_bwa/ui/pages/checkout_page.dart';
 import 'package:flutter_travel_bwa/ui/widgets/custom_button.dart';
 import 'package:flutter_travel_bwa/ui/widgets/custom_seat_item.dart';
 import '../../shared/theme.dart';
@@ -444,7 +445,14 @@ class SeatPage extends StatelessWidget {
           right: defaultMargin,
           bottom: 40,
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CheckoutPage(),
+            ),
+          );
+        },
       );
     }
 

@@ -21,7 +21,7 @@ class CustomInterestItem extends StatelessWidget {
         Text(
           textInterestItem,
           style: greyTextStyle.copyWith(
-            fontSize: 14,
+            fontSize: 16,
             fontWeight: regular,
           ),
         )
