@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "684101095799",
+    "project_id": "travelairplane-7a4b7",
+    "storage_bucket": "travelairplane-7a4b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684101095799:android:eb6cbf405c50e2f0529172",
+        "android_client_info": {
+          "package_name": "com.daviar.flutter_travel_bwa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "684101095799-66djovjpvjc9ksmljtkpeuqsp7cjqch6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuPzz0F9Xtk9oECm3RF8Q1qbs5r_L7r3I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "684101095799-66djovjpvjc9ksmljtkpeuqsp7cjqch6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
