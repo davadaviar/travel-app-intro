@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_travel_bwa/cubit/cubit_cubit.dart';
 import 'package:flutter_travel_bwa/ui/pages/bonus_page.dart';
@@ -8,7 +10,13 @@ import 'package:flutter_travel_bwa/ui/pages/seat_page.dart';
 import 'package:flutter_travel_bwa/ui/pages/sign_up_page.dart';
 import 'package:flutter_travel_bwa/ui/pages/splash_page.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
