@@ -60,7 +60,7 @@ class CheckoutPage extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'Paris',
+                      'Roma',
                       style: greyTextStyle.copyWith(
                         fontSize: 16,
                         fontWeight: light,
