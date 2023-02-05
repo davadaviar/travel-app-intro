@@ -1,8 +1,9 @@
 import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
 
-part 'cubit_state.dart';
+class CubitCubit extends Cubit<int> {
+  CubitCubit() : super(0);
 
-class CubitCubit extends Cubit<CubitState> {
-  CubitCubit() : super(CubitInitial());
+  void setPage(int newPage) {
+    emit(newPage);
+  }
 }

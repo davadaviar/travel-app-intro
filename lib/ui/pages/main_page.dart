@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_travel_bwa/cubit/cubit_cubit.dart';
 import 'package:flutter_travel_bwa/ui/pages/home_page.dart';
+import 'package:flutter_travel_bwa/ui/pages/settings_page.dart';
+import 'package:flutter_travel_bwa/ui/pages/transactions_page.dart';
+import 'package:flutter_travel_bwa/ui/pages/wallet_page.dart';
 import 'package:flutter_travel_bwa/ui/widgets/custom_bottom_navbar_item.dart';
 import '../../shared/theme.dart';
 
@@ -8,8 +13,19 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget buildContent() {
-      return HomePage();
+    Widget buildContent(int currentIndex) {
+      switch(currentIndex) {
+        case 0:
+          return HomePage();
+        case 1:
+          return TransactionsPage();
+        case 2: 
+          return WalletPage();
+        case 3: 
+          return SettingsPage();
+        default: 
+          return HomePage();
+      }
     }
 
     Widget customBottomNavbar() {
@@ -38,16 +54,19 @@ class MainPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               CustomBottomNavbarItem(
+                index: 0,
                 imgUrl: 'assets/icon_home.png',
-                isSelected: true,
               ),
               CustomBottomNavbarItem(
+                index: 1,
                 imgUrl: 'assets/icon_booking.png',
               ),
               CustomBottomNavbarItem(
+                index: 2,
                 imgUrl: 'assets/icon_card.png',
               ),
               CustomBottomNavbarItem(
+                index: 3,
                 imgUrl: 'assets/icon_settings.png',
               ),
             ],
@@ -56,14 +75,18 @@ class MainPage extends StatelessWidget {
       );
     }
 
-    return Scaffold(
-      backgroundColor: kBackgroundColor,
-      body: Stack(
-        children: [
-          buildContent(),
-          customBottomNavbar(),
-        ],
-      ),
+    return BlocBuilder<CubitCubit, int>(
+      builder: (context, currentIndex) {
+        return Scaffold(
+          backgroundColor: kBackgroundColor,
+          body: Stack(
+            children: [
+              buildContent(currentIndex),
+              customBottomNavbar(),
+            ],
+          ),
+        );
+      },
     );
   }
 }

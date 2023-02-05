@@ -1,40 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_travel_bwa/cubit/cubit_cubit.dart';
 import '../../shared/theme.dart';
 
 class CustomBottomNavbarItem extends StatelessWidget {
+  final int index;
   final String imgUrl;
-  final bool isSelected;
 
-  const CustomBottomNavbarItem(
-      {Key? key, required this.imgUrl, this.isSelected = false})
-      : super(key: key);
+  const CustomBottomNavbarItem({
+    Key? key,
+    required this.imgUrl,
+    required this.index,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        SizedBox(),
-        Container(
-          width: 24,
-          height: 24,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(
-                imgUrl,
-              ),
+    return GestureDetector(
+      onTap: () {
+        context.read<CubitCubit>().setPage(index);
+      },
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          SizedBox(),
+          Image.asset(
+            imgUrl,
+            width: 24,
+            height: 24,
+            color: context.read<CubitCubit>().state == index
+                ? kPrimaryColor
+                : kGreyColor,
+          ),
+          Container(
+            width: 30,
+            height: 4,
+            decoration: BoxDecoration(
+              color: context.read<CubitCubit>().state == index
+                  ? kPrimaryColor
+                  : kTransparentColor,
+              borderRadius: BorderRadius.circular(18),
             ),
           ),
-        ),
-        Container(
-          width: 30,
-          height: 4,
-          decoration: BoxDecoration(
-            color: isSelected ? kPrimaryColor : kTransparentColor,
-            borderRadius: BorderRadius.circular(18),
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
